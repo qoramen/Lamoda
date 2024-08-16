@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamoda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="nav-top">
+            <div class="contain  flex-div">
+                <div class="left flex-div">
+                    <a href="">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <p>Укажите регион доставки...</p>
+                    </a>
+                </div>
+                <div class="right flex-div">
+                    <div class="flex-div">
+                        <a href="">
+                            <i class="fa-solid fa-car"></i>
+                            <p>Больше способов доставки</p>
+                        </a>
+                    </div>
+                    <div class="flex-div">
+                        <a href="">
+                            <i class="fa-solid fa-wallet"></i>
+                            <p>Платите когда хотите</p>
+                        </a>
+                    </div>
+                    <div class="flex-div">
+                        <a href="">
+                            <i class="fa-solid fa-shop"></i>
+                            <p>Магазины Lamoda Sport</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-center">
+            <div class="contain flex-div">
+                <div class="left flex-div">
+                    <a href="">
+                        <p>Женщинам</p>
+                    </a><a href="">
+                        <p>Мужчинам</p>
+                    </a><a href="" class="current">
+                        <p>Детям</p>
+                    </a>
+                </div>
+                <div class="center flex-div">
+                    <a href=""><img src="./assets/img/lamoda-logo.svg"></a>
+                </div>
+                <div class="right flex-div">
+                    <div class="form">
+                        <button type="button" class="btn" id="log-btn">
+                            Войти
+                        </button>
+                    </div>
+                    <div class="basket">
+                        <a href="" class="flex-div">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <p>Корзина</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-bottom">
+            <div class="contain flex-div">
+                <div class="left flex-div">
+                    <div class="category flex-div">
+                        <a href="" class="leader">
+                            <p>Школа</p>
+                        </a><a href="" class="lead" id="category-new">
+                            <p>Новинки</p>
+                        </a><a href="" class="lead" id="category-girl">
+                            <p>Девочкам</p>
+                        </a><a href="" class="lead" id="category-boy">
+                            <p>Мальчикам</p>
+                        </a><a href="" class="lead" id="category-baby">
+                            <p>Малышам</p>
+                        </a><a href="" class="lead" id="category-brand">
+                            <p>Бренды</p>
+                        </a><a href="" class="lead" id="category-premium">
+                            <p>Premium</p>
+                        </a><a href="" class="lead" id="category-sport">
+                            <p>Спорт</p>
+                        </a><a href="" class="lead">
+                            <p>Игрушки</p>
+                        </a><a href="" class="lead">
+                            <p>Дом</p>
+                        </a><a href="" class="lead">
+                            <p>Уход</p>
+                        </a><a href="" class="lead">
+                            <p>Resale</p>
+                        </a><a href="" class="leader">
+                            <p>Sale%</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="right flex-div">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Поиск" aria-label="Recipient's username"
+                            aria-describedby="button-addon2">
+                        <button class="btn" type="button" id="button-addon2"><i
+                                class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="nav-categories news" id="news">
+                <div class="contain">
+                    <div class="categories">
+                        <ul>
+                            <li class="title"><a href="">Девочкам</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                            <li><a href="">Аксессуары</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Мальчикам</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                            <li><a href="">Аксессуары</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Малышам</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title none"><a href="">Default</a></li>
+                            <li><a href="">Шоурум российские дизайнеры</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-categories girls" id="girls">
+                <div class="contain">
+                    <div class="categories">
+                        <ul>
+                            <li class="title"><a href="">Одежда</a></li>
+                            <li><a href="">Белье и одежда для дома</a></li>
+                            <li><a href="">Блузы и рубашки</a></li>
+                            <li><a href="">Верхняя одежда</a></li>
+                            <li><a href="">Джемперы и кардиганы</a></li>
+                            <li><a href="">Джинсы</a></li>
+                            <li><a href="">Пиджаки и костюмы</a></li>
+                            <li><a href="">Платья и сарафаны</a></li>
+                            <li><a href="">Толстовки и свитшоты</a></li>
+                            <li><a href="">Футболки и поло</a></li>
+                            <li><a href="">Юбки</a></li>
+                            <li><a href="">все категории</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Обувь</a></li>
+                            <li><a href="">Балетки</a></li>
+                            <li><a href="">Ботинки</a></li>
+                            <li><a href="">Домашняя обувь</a></li>
+                            <li><a href="">Кроссовки и кеды</a></li>
+                            <li><a href="">Мокасины и слипоны</a></li>
+                            <li><a href="">Резиновая обувь</a></li>
+                            <li><a href="">Сапоги</a></li>
+                            <li><a href="">Туфли</a></li>
+                            <li><a href="">все категории</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Аксессуары</a></li>
+                            <li><a href="">Аксессуары для волос</a></li>
+                            <li><a href="">Головные уборы</a></li>
+                            <li><a href="">Зонты</a></li>
+                            <li><a href="">Очки</a></li>
+                            <li><a href="">Пеналы и кошельки</a></li>
+                            <li><a href="">Перчатки и варежки</a></li>
+                            <li><a href="">Платки и шарфы</a></li>
+                            <li><a href="">Ремни и подтяжки</a></li>
+                            <li><a href="">Рюкзаки</a></li>
+                            <li><a href="">Сумки и чехлы</a></li>
+                            <li><a href="">Уход и косметика</a></li>
+                            <li><a href="">Игрушки</a></li>
+                            <li><a href="">все категории</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Бренды</a></li>
+                            <li><a href="">Acoola</a></li>
+                            <li><a href="">Choupette</a></li>
+                            <li><a href="">ECCO</a></li>
+                            <li><a href="">Gloria Jeans</a></li>
+                            <li><a href="">LC Waikiki</a></li>
+                            <li><a href="">Mango Kids</a></li>
+                            <li><a href="">Original Marines</a></li>
+                            <li><a href="">Play Today</a></li>
+                            <li><a href="">Reima</a></li>
+                            <li><a href="">Sela</a></li>
+                            <li><a href="">United Colors of Benetton</a></li>
+                            <li><a href="">Котофей</a></li>
+                            <li><a href="">все бренды</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-categories boys" id="boys">
+                <div class="contain">
+                    <div class="categories">
+                        <ul>
+                            <li class="title"><a href="">Одежда</a></li>
+                            <li><a href="">Белье и одежда для дома</a></li>
+                            <li><a href="">Брюки и комбинезоны</a></li>
+                            <li><a href="">Верхняя одежда</a></li>
+                            <li><a href="">Джемперы и кардиганы</a></li>
+                            <li><a href="">Джинсы</a></li>
+                            <li><a href="">Пиджаки и костюмы</a></li>
+                            <li><a href="">Рубашки</a></li>
+                            <li><a href="">Спортивные костюмы</a></li>
+                            <li><a href="">Толстовки и свитшоты</a></li>
+                            <li><a href="">Футболки и поло</a></li>
+                            <li><a href="">все категории</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Обувь</a></li>
+                            <li><a href="">Ботинки</a></li>
+                            <li><a href="">Домашняя обувь</a></li>
+                            <li><a href="">Кроссовки и кеды</a></li>
+                            <li><a href="">Мокасины и слипоны</a></li>
+                            <li><a href="">Резиновая обувь</a></li>
+                            <li><a href="">Сапоги</a></li>
+                            <li><a href="">Туфли</a></li>
+                            <li><a href="">все категории</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Аксессуары</a></li>
+                            <li><a href="">Галстуки</a></li>
+                            <li><a href="">Головные уборы</a></li>
+                            <li><a href="">Зонты</a></li>
+                            <li><a href="">Очки</a></li>
+                            <li><a href="">Пеналы и кошельки</a></li>
+                            <li><a href="">Перчатки и варежки</a></li>
+                            <li><a href="">Платки и шарфы</a></li>
+                            <li><a href="">Ремни и пояса</a></li>
+                            <li><a href="">Рюкзаки</a></li>
+                            <li><a href="">Сумки и чехлы</a></li>
+                            <li><a href="">Уход и косметика</a></li>
+                            <li><a href="">Игрушки</a></li>
+                            <li><a href="">все категории</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Бренды</a></li>
+                            <li><a href="">Acoola</a></li>
+                            <li><a href="">Calvin Klein Jeans</a></li>
+                            <li><a href="">ECCO</a></li>
+                            <li><a href="">Gloria Jeans</a></li>
+                            <li><a href="">LC Waikiki</a></li>
+                            <li><a href="">Mango Kids</a></li>
+                            <li><a href="">O'stin</a></li>
+                            <li><a href="">Play Today</a></li>
+                            <li><a href="">Reima</a></li>
+                            <li><a href="">Sela</a></li>
+                            <li><a href="">United Colors of Benetton</a></li>
+                            <li><a href="">Котофей</a></li>
+                            <li><a href="">все бренды</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-categories babies" id="babies">
+                <div class="contain">
+                    <div class="categories">
+                        <ul>
+                            <li class="title"><a href="">Одежда</a></li>
+                            <li><a href="">Боди</a></li>
+                            <li><a href="">Брюки и комбинезоны</a></li>
+                            <li><a href="">Верхняя одежда</a></li>
+                            <li><a href="">Джемперы и кардиганы</a></li>
+                            <li><a href="">Комбинезоны</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title none"><a href="">Default</a></li>
+                            <li><a href="">Комплекты и костюмы</a></li>
+                            <li><a href="">Платья</a></li>
+                            <li><a href="">Футболки и рубашкиКроссовки и кеды</a></li>
+                            <li><a href="">Мокасины и слипоны</a></li>
+                            <li><a href="">Резиновая обувь</a></li>
+                            <li><a href="">вся одежда</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title none"><a href="">Default</a></li>
+                            <li><a href="">Обувь</a></li>
+                            <li><a href="">Аксессуары</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title none"><a href="">Бренды</a></li>
+                            <li><a href="">Уход и косметика</a></li>
+                            <li><a href="">Конверты и одеяла</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-categories brands" id="brands">
+                <div class="contain">
+                    <div class="nav">
+                        <a href="" class="current">
+                            <p>Все бренды</p>
+                        </a><a href="">
+                            <p>Premium</p>
+                        </a>
+                    </div>
+                    <div class="categories first">
+                        <ul>
+                            <li><a href="">Acoola</a></li>
+                            <li><a href="">adidas</a></li>
+                            <li><a href="">Bossa Nova</a></li>
+                            <li><a href="">Button Blue</a></li>
+                            <li><a href="">Calvin Klein Jeans</a></li>
+                            <li><a href="">Choupette</a></li>
+                            <li><a href="">Ecco</a></li>
+                            <li><a href="">Geox</a></li>
+                            <li><a href="">Gloria Jeans</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Guess</a></li>
+                            <li><a href="">Gulliver</a></li>
+                            <li><a href="">Kapika</a></li>
+                            <li><a href="">Kenka</a></li>
+                            <li><a href="">Kerry</a></li>
+                            <li><a href="">Lassie</a></li>
+                            <li><a href="">LC Waikiki</a></li>
+                            <li><a href="">Lime</a></li>
+                            <li><a href="">Mango Kids</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Mark Formelle</a></li>
+                            <li><a href="">Mayoral</a></li>
+                            <li><a href="">Modis</a></li>
+                            <li><a href="">Nike</a></li>
+                            <li><a href="">Original Marines</a></li>
+                            <li><a href="">O'stin</a></li>
+                            <li><a href="">Play Today</a></li>
+                            <li><a href="">PUMA</a></li>
+                            <li><a href="">Reima</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Sela</a></li>
+                            <li><a href="">Smena</a></li>
+                            <li><a href="">T.Taccardi</a></li>
+                            <li><a href="">Tapiboo</a></li>
+                            <li><a href="">Tommy Hilfiger</a></li>
+                            <li><a href="">UNIQLO</a></li>
+                            <li><a href="">United Colors of Benetton</a></li>
+                            <li><a href="">Kotofei</a></li>
+                            <li><a href="">все бренды</a></li>
+                        </ul>
+                    </div>
+                    <div class="categories second">
+                        <ul>
+                            <li><a href="">Acoola</a></li>
+                            <li><a href="">adidas</a></li>
+                            <li><a href="">Bossa Nova</a></li>
+                            <li><a href="">Button Blue</a></li>
+                            <li><a href="">Calvin Klein Jeans</a></li>
+                            <li><a href="">Choupette</a></li>
+                            <li><a href="">Ecco</a></li>
+                            <li><a href="">Geox</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Guess</a></li>
+                            <li><a href="">Gulliver</a></li>
+                            <li><a href="">Kapika</a></li>
+                            <li><a href="">Kenka</a></li>
+                            <li><a href="">Kerry</a></li>
+                            <li><a href="">Lassie</a></li>
+                            <li><a href="">LC Waikiki</a></li>
+                            <li><a href="">Lime</a></li>
+                            <li><a href="">Mango Kids</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Mark Formelle</a></li>
+                            <li><a href="">Mayoral</a></li>
+                            <li><a href="">Modis</a></li>
+                            <li><a href="">Nike</a></li>
+                            <li><a href="">Original Marines</a></li>
+                            <li><a href="">O'stin</a></li>
+                            <li><a href="">Play Today</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Sela</a></li>
+                            <li><a href="">Smena</a></li>
+                            <li><a href="">T.Taccardi</a></li>
+                            <li><a href="">United Colors of Benetton</a></li>
+                            <li><a href="">Kotofei</a></li>
+                            <li><a href="">все бренды</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-categories premium" id="premium">
+                <div class="contain">
+                    <div class="categories">
+                        <ul>
+                            <li class="title"><a href="">Девочкам</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                            <li><a href="">Аксессуары</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Мальчикам</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                            <li><a href="">Аксессуары</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Бренды</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Bossa Nova</a></li>
+                            <li><a href="">Button Blue</a></li>
+                            <li><a href="">Calvin Klein Jeans</a></li>
+                            <li><a href="">Choupette</a></li>
+                            <li><a href="">Ecco</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title none"><a href="">Default</a></li>
+                            <li><a href="">Kerry</a></li>
+                            <li><a href="">Lassie</a></li>
+                            <li><a href="">LC Waikiki</a></li>
+                            <li><a href="">Lime</a></li>
+                            <li><a href="">Mango Kids</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-categories sports" id="sport">
+                <div class="contain">
+                    <div class="categories">
+                        <ul>
+                            <li class="title"><a href="">Девочкам</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                            <li><a href="">Аксессуары</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Мальчикам</a></li>
+                            <li><a href="">Одежда</a></li>
+                            <li><a href="">Обувь</a></li>
+                            <li><a href="">Аксессуары</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title"><a href="">Бренды</a></li>
+                            <li><a href="">adidas</a></li>
+                            <li><a href="">EA7</a></li>
+                            <li><a href="">Fila</a></li>
+                            <li><a href="">Nike</a></li>
+                        </ul>
+                        <ul>
+                            <li class="title none"><a href="">Default</a></li>
+                            <li><a href="">Outventura</a></li>
+                            <li><a href="">PUMA</a></li>
+                            <li><a href="">Reabook</a></li>
+                            <li><a href="">все бренды</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="ads">
+        <div class="contain">
+            <div class="ads-carusel">
+                <div class="ads__slider">
+                    <div class="ads__slider-wrapper">
+                        <div class="ads__slide" id="slider1">
+                            <img src="./assets/img/lamoda-ads-1.png" alt="slider1" />
+                            <div class="adscontent__descr">
+                                <div class="text">
+                                    <h3 class="title">Успейте купить все к школе</h3>
+                                    <h3 class="subtitle">Бренды, которые любят и дети, и родители</h3>
+                                </div>
+                                <div class="ads__slider-counter">
+                                    <div class="ads__slider-prev" id="prev">
+                                        <i class="fa-solid fa-arrow-left-long"></i>
+                                    </div>
+                                    <span>01</span>
+                                    /
+                                    <span>03</span>
+                                    <div class="ads__slider-next" id="next1">
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ads__slide" id="slider2">
+                            <img src="./assets/img/lamoda-ads-2.png" alt="slider1" />
+                            <div class="adscontent__descr">
+                                <div class="text">
+                                    <h3 class="title">Успейте купить все к школе</h3>
+                                    <h3 class="subtitle">Бренды, которые любят и дети, и родители</h3>
+                                </div>
+                                <div class="ads__slider-counter">
+                                    <div class="ads__slider-prev" id="prev2">
+                                        <i class="fa-solid fa-arrow-left-long"></i>
+                                    </div>
+                                    <span id="current">02</span>
+                                    /
+                                    <span id="total">03</span>
+                                    <div class="offer__slider-next" id="next2">
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ads__slide" id="slider3">
+                            <img src="./assets/img/lamoda-ads-3.png" alt="slider3" />
+                            <div class="adscontent__descr">
+                                <div class="text">
+                                    <h3 class="title">Успейте купить все к школе</h3>
+                                    <h3 class="subtitle">Бренды, которые любят и дети, и родители</h3>
+                                </div>
+                                <div class="ads__slider-counter">
+                                    <div class="ads__slider-prev" id="prev3">
+                                        <i class="fa-solid fa-arrow-left-long"></i>
+                                    </div>
+                                    <span id="current">03</span>
+                                    /
+                                    <span id="total">03</span>
+                                    <div class="ads__slider-next" id="next">
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="other">
+                <div class="other-ads">
+                    <img src="./assets/img/lamoda-ads-4.png" alt="">
+                    <h3 class="title">Успейте купить все к школе</h3>
+                    <h3 class="subtitle">Снова в школу</h3>
+                </div>
+                <div class="other-ads">
+                    <img src="./assets/img/lamoda-ads-4.png" alt="">
+                    <h3 class="title">Успейте купить все к школе</h3>
+                    <h3 class="subtitle">Снова в школу</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="exclusive">
+        <div class="contain">
+            <div class="ex-carusel">
+                <div class="ex__slider">
+                    <div class="ex__slider-counter">
+                        <div class="ex__slider-prev">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </div>
+                        <div class="ex__slider-next">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="ex__slider-wrapper">
+                        <div class="ex__slider-inner">
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-1">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-2">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-3">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-4">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-5">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-6">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-7">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-8">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-9">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-10">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-11">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                            <div class="ex__slide">
+                                <div class="excontent__descr">
+                                    <img src="./assets/img/ex-img-1.webp" id="active">
+                                    <img src="./assets/img/ex-img-1.webp" alt="" id="1-1" class="img">
+                                    <img src="./assets/img/ex-img-2.webp" alt="" id="1-2" class="img">
+                                    <img src="./assets/img/ex-img-3.webp" alt="" id="1-3" class="img">
+                                    <div class="ex__img-hover" id="hover__div-12">
+                                        <div class="ex__img-controler" id="hover__ctrl-1">
+                                            <div id="first">
+                                                <span id="span1"></span>
+                                            </div>
+                                            <div id="second"><span id="span1"></span></div>
+                                            <div id="third"><span id="span1"></span></div>
+                                        </div>
+                                    </div>
+                                    <span class="fav"></span>
+                                    <p class="cost"><del>65</del> 35 $</p>
+                                    <p class="description">PlayToday</p>
+                                    <p class="brand-name">Поло</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nma"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
