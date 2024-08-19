@@ -156,109 +156,121 @@ prev3.addEventListener('click', function () {
     slider3.style.right = '867px'
 })
 
-const slideField = document.querySelector('.ex__slider-inner');
-const slides = document.querySelectorAll('.ex__slide');
-const next = document.querySelector('.ex__slider-next');
-const prev = document.querySelector('.ex__slider-prev');
-let index = 0;
-const visibleSlides = 6;
+// const slideField = document.querySelector('.ex__slider-inner');
+// const slides = document.querySelectorAll('.ex__slide');
+// const next = document.querySelector('.ex__slider-next');
+// const prev = document.querySelector('.ex__slider-prev');
+// let index = 0;
+// const visibleSlides = 6;
 
-next.addEventListener('click', () => {
-    index++;
-    if (index > slides.length - visibleSlides) {
-        index = 0;
+// next.addEventListener('click', () => {
+//     index++;
+//     if (index > slides.length - visibleSlides) {
+//         index = 0;
+//     }
+
+//     slideField.style.transform = `translateX(-${index * 200}px)`;
+// });
+
+// prev.addEventListener('click', () => {
+//     index--;
+//     if (index < 0) {
+//         index = slides.length - visibleSlides;
+//     }
+//     slideField.style.transform = `translateX(-${index * 200}px)`;
+// });
+
+const carousel = document.getElementById('carousel');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+let offset = 0;
+const slideWidth = 200; // Slide eni + margin
+const totalSlides = 12; // Slaydlar soni
+const visibleSlides = Math.floor(1200 / slideWidth); // Ko'rinadigan slaydlar soni
+const maxOffset = slideWidth * (totalSlides - visibleSlides); // Maksimal siljish
+
+nextBtn.addEventListener('click', () => {
+    if (offset < maxOffset) {
+        offset += slideWidth;
+        carousel.style.transform = `translateX(-${offset}px)`;
     }
-
-    prev.style.visibility = 'visible'
-    slideField.style.transform = `translateX(-${index * 200}px)`;
 });
 
-prev.addEventListener('click', () => {
-    index--;
-    if (index < 0) {
-        index = slides.length - visibleSlides;
+prevBtn.addEventListener('click', () => {
+    if (offset > 0) {
+        offset -= slideWidth;
+        carousel.style.transform = `translateX(-${offset}px)`;
     }
-    slideField.style.transform = `translateX(-${index * 200}px)`;
 });
 
+const carousel1 = document.getElementById('carousel1');
+const nextBtn1 = document.getElementById('next1Btn');
+const prevBtn1 = document.getElementById('prev1Btn');
 
-const hoverDiv1 = document.getElementById('hover__div-1'),
-    hoverDiv2 = document.getElementById('hover__div-2'),
-    hoverDiv3 = document.getElementById('hover__div-3'),
-    hoverDiv4 = document.getElementById('hover__div-4'),
-    hoverDiv5 = document.getElementById('hover__div-5'),
-    hoverDiv6 = document.getElementById('hover__div-6'),
-    hoverDiv7 = document.getElementById('hover__div-7'),
-    hoverDiv8 = document.getElementById('hover__div-8'),
-    hoverDiv9 = document.getElementById('hover__div-9'),
-    hoverDiv10 = document.getElementById('hover__div-10'),
-    hoverDiv11 = document.getElementById('hover__div-11'),
-    hoverDiv12 = document.getElementById('hover__div-12')
+let offset1 = 0;
+const slideWidth1 = 200; // Slide eni + margin
+const totalSlides1 = 12; // Slaydlar soni
+const visibleSlides1 = Math.floor(1200 / slideWidth1); // Ko'rinadigan slaydlar soni
+const maxOffset1 = slideWidth1 * (totalSlides1 - visibleSlides1); // Maksimal siljish
 
-const array = [hoverDiv1, hoverDiv2, hoverDiv3, hoverDiv4, hoverDiv5, hoverDiv6, hoverDiv7, hoverDiv8, hoverDiv9, hoverDiv10, hoverDiv11, hoverDiv12]
+nextBtn1.addEventListener('click', () => {
+    if (offset1 < maxOffset1) {
+        offset1 += slideWidth1;
+        carousel1.style.transform = `translateX(-${offset1}px)`;
+    }
+});
 
-for (let i = 0; i < array.length; i++) {
+prevBtn1.addEventListener('click', () => {
+    if (offset1 > 0) {
+        offset1 -= slideWidth1;
+        carousel1.style.transform = `translateX(-${offset1}px)`;
+    }
+});
 
-    array[1].addEventListener('mouseover', function () {
+const slider21 = document.getElementById('slider21'),
+    slider22 = document.getElementById('slider22'),
+    slider23 = document.getElementById('slider23')
 
-        const Div1 = document.getElementById('first'),
-            Div2 = document.getElementById('second'),
-            Div3 = document.getElementById('third')
-    
-        const span1 = document.getElementById('span1'),
-            span2 = document.getElementById('span2'),
-            span3 = document.getElementById('span3')
-    
-        const ctrl1 = document.getElementById('hover__ctrl-1')
-    
-        const Img1 = document.getElementById('1-1'),
-            Img2 = document.getElementById('1-2'),
-            Img3 = document.getElementById('1-3'),
-            activeImg = document.getElementById('active')
-    
-        ctrl1.style.display = 'block'
-    
-        Div1.addEventListener('mouseover', function () {
-            activeImg.style.display = 'none';
-            Img1.style.display = 'block'
-            span1.style.borderColor = '#aaa'
-        })
-        Div1.addEventListener('mouseout', function () {
-            activeImg.style.display = 'block';
-            Img1.style.display = 'none'
-            span1.style.borderColor = '#d6d6d6b6'
-        })
-    
-        Div2.addEventListener('mouseover', function () {
-            activeImg.style.display = 'none';
-            Img2.style.display = 'block'
-            span2.style.borderColor = '#aaa'
-        })
-        Div2.addEventListener('mouseout', function () {
-            activeImg.style.display = 'block';
-            Img2.style.display = 'none'
-            span2.style.borderColor = '#d6d6d6b6'
-        })
-    
-        Div3.addEventListener('mouseover', function () {
-            activeImg.style.display = 'none';
-            Img3.style.display = 'block'
-            span3.style.borderColor = '#aaa'
-        })
-        Div3.addEventListener('mouseout', function () {
-            activeImg.style.display = 'block';
-            Img3.style.display = 'none'
-            span3.style.borderColor = '#d6d6d6b6'
-        })
-    })
-    
-    array[i].addEventListener('mouseout', function () {
-    
-        const ctrl1 = document.getElementById('hover__ctrl-1')
-    
-        ctrl1.style.display = 'none'
-    })
+const next21 = document.getElementById('next21')
+const next22 = document.getElementById('next22')
+const prev22 = document.getElementById('prev22')
+const prev23 = document.getElementById('prev23')
+
+next21.addEventListener('click', function () {
+    slider21.style.right = '867px'
+    slider22.style.right = '867px'
+    slider23.style.right = '867px'
+})
+
+next22.addEventListener('click', function () {
+    slider21.style.right = '1734px'
+    slider22.style.right = '1734px'
+    slider23.style.right = '1734px'
+})
+
+prev22.addEventListener('click', function () {
+    slider21.style.right = '0'
+    slider22.style.right = '0'
+    slider23.style.right = '0'
+})
+
+prev23.addEventListener('click', function () {
+    slider21.style.right = '867px'
+    slider22.style.right = '867px'
+    slider23.style.right = '867px'
+})
+
+let currentIndex = 0;
+const slidess = document.querySelectorAll('.slidee');
+const totalSlidess = slidess.length;
+
+const carousell = document.getElementById('carouseel');
+
+function showNextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlidess;
+    const offsett = -currentIndex * 50;
+    carousell.style.transform = `translateX(${offsett}%)`;
 }
 
-
-
+setInterval(showNextSlide, 3000);

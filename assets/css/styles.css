@@ -384,13 +384,25 @@ body p {
 }
 
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* ------------------ Ads Carusel ----------------- */
+/* ------------------ Ex Carusel ----------------- */
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
 
 .exclusive {
     width: 100%;
     padding: 20px 0;
+}
+
+.exclusive .title {
+    color: #000;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.exclusive .title:hover {
+    color: #888888;
+    cursor: pointer;
 }
 
 .ex__slider-wrapper {
@@ -401,12 +413,12 @@ body p {
 .ex__slider-inner {
     display: flex;
     justify-content: space-between;
-    transition: 3s ease all;
-    overflow: hidden;
+    transition: 1s ease all;
 }
 
 .ex__slide {
-    margin-right: 20px;
+    margin-right: 22px;
+    width: 320px;
 }
 
 .ex__slide img {
@@ -427,10 +439,6 @@ body p {
 .ex__slide p {
     font-size: 0.9rem;
     line-height: 16px;
-}
-
-.active {
-    display: block;
 }
 
 .ex__slider-counter {
@@ -473,6 +481,7 @@ body p {
     height: 259px;
     margin-top: -259px;
     display: flex;
+    cursor: pointer;
 }
 
 .ex__img-hover img {
@@ -489,6 +498,10 @@ body p {
     position: absolute;
     padding: 0 5px;
     cursor: pointer;
+}
+
+.ex__img-controler div:hover span {
+    border-color: #aaa;
 }
 
 .ex__img-controler div span {
@@ -508,13 +521,233 @@ body p {
     left: 120px;
 }
 
-.ex__slider-prev {
-    visibility: hidden;
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* ------------------ Icons Carusel, bttm ----------------- */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.popbttm {
+    padding: 40px 0;
+}
+
+.icons img {
+    margin: 40px 0;
+    width: 100%;
+}
+
+.iconsbttm img {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.iconsbttm img:hover {
+    opacity: 0.8;
+}
+
+.popbttm .carousel-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.popbttm .carousel {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.popbttm .carousel-inner {
+    display: flex;
+}
+
+.popbttm img {
+    width: 100%;
+    margin-right: 30px;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* ------------------ Footer ----------------- */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+
+footer {
+    width: 100%;
+    background-color: #1c1c1e;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #888888;
+    padding: 30px 0 0;
+}
+
+.input input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+    padding-bottom: 10px;
+}
+
+.input button {
+    padding: 5px 20px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    margin-left: 30px;
+}
+
+.input button:hover {
+    color: #ccc;
+    border-color: #ccc;
+}
+
+.box {
+    width: 50%;
+}
+
+.box p {
+    color: #fff;
+}
+
+.box p:hover {
+    cursor: pointer;
+    color: #cccccc;
+}
+
+.link {
+    border-bottom: 1px solid #fff;
+    display: inline-block;
+    transition: all 300ms ease;
+    margin-top: 20px;
+}
+
+.link:hover {
+    border: none;
+    padding-bottom: 5px;
+    border-color: #cccccc;
+}
+
+.box .title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.box .text {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.box:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box:nth-child(2){
+    display: flex;
+}
+
+.box-item {
+    width: 50%;
+}
+
+/* -------------------------- Footer center 1 ------------------------------ */
+
+.footer-center_1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.box-items p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.box-items span {
+    border-bottom: 1px solid #ccc;
+    transition: all 300ms ease;
+}
+
+.box-items span:hover {
+    border: none;
+    cursor: pointer;
+}
+
+/* -------------------------- Footer center 2 ------------------------------ */
+
+/* top */
+
+.top .title {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.top ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.top ul li:nth-child(1){
+    border-left: 1px solid #888;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.top ul li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.top ul li {
+    list-style: none;
+    border-top: 1px solid #888;
+    border-bottom: 1px solid #888;
+    border-right: 1px solid #888;
+}
+
+.top ul li a {
+    color: #888;
+    padding: 2px 10px;
+    display: inline-block;
+}
+
+.top ul li a.current {
+    color: #fff;
+}
+
+.top ul li a:hover {
+    color: #fff;
+}
+
+/* Bottom */
+
+.bottom {
+    padding: 20px 0;
+}
+
+.bottom p {
+    color: #fff;
+}
+
+.bottom .title {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.bottom .text{
+    font-size: 0.7rem;
+    margin-bottom: 7px;
+    line-height: 16px
+}
+
+.footer-bottom {
+    padding: 20px 6%;
+    background: #2c2c2e;
 }
 
 /* ----------------------------------------------------- */
-.nma {
-    width: 100%;
-    height: 1000px;
-    background-color: coral;
-}
