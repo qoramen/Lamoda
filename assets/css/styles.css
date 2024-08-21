@@ -28,6 +28,12 @@ body p {
     padding: 0 6%;
 }
 
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* ------------------- Navbar---------------------- */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+/* Navbar top */
+
 .nav-top {
     width: 100%;
     height: auto;
@@ -56,6 +62,8 @@ body p {
     color: #fff;
     font-size: 0.8rem;
 }
+
+/* Navbar center */
 
 .nav-center {
     padding: 25px 0;
@@ -90,59 +98,73 @@ body p {
     margin-right: 80px;
 }
 
-.nav-center .right .form .btn {
+.nav-center .btn {
     padding: 5px 15px;
     border: 1px solid #000;
     transition: all 300ms ease;
 }
 
-.nav-center .right .form .btn:hover {
+.nav-center .btn:hover {
     border-color: #888888;
     color: #888888;
 }
 
-.nav-center .right .basket {
+.nav-center .basket {
     margin-left: 20px;
 }
 
-.nav-center .right .basket a {
+.nav-center .basket a {
     color: #000;
     transition: all 300ms ease;
 }
 
-.nav-center .right .basket a:hover {
+.nav-center .basket a:hover {
     color: #888888;
 }
 
-.nav-center .right .basket i {
+.nav-center .basket i {
     margin-right: 5px;
     font-size: 1.2rem;
 }
 
-.nav-center .right .basket p {
+.nav-center .basket p {
     margin: 0;
     font-size: 0.8rem;
 }
+
+.profile {
+    border: 0;
+    border-radius: 50%;
+    background-color: 0;
+    display: none;
+}
+
+.profile img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+/* Navbar top */
 
 .nav-bottom p {
     margin: 0;
 }
 
-.nav-bottom .right .form-control {
+.nav-bottom .form-control {
     border: 1px solid #000;
     border-radius: 0;
     border-right: 0;
 }
 
-.nav-bottom .right .form-control:hover {
+.nav-bottom .form-control:hover {
     cursor: pointer;
 }
 
-.nav-bottom .right .form-control:focus {
+.nav-bottom .form-control:focus {
     box-shadow: none;
 }
 
-.nav-bottom .right .btn {
+.nav-bottom .btn {
     background-color: #000;
     color: #fff;
     border-radius: 0;
@@ -151,7 +173,7 @@ body p {
     transition: all 300ms ease;
 }
 
-.nav-bottom .right .btn:hover {
+.nav-bottom .btn:hover {
     background-color: #4e4e4e;
 }
 
@@ -159,21 +181,17 @@ body p {
     padding: 16px 5px;
 }
 
-.nav-bottom .left .lead {
+.nav-bottom .lead {
     font-size: 1rem;
     color: #000;
     font-weight: 400;
 }
 
-.nav-bottom .left {
-    height: auto;
-}
-
-.nav-bottom .left .category:hover .lead {
+.nav-bottom .category:hover .lead {
     color: #888888;
 }
 
-.nav-bottom .left .category .lead:hover {
+.nav-bottom .category .lead:hover {
     color: #000;
 }
 
@@ -185,6 +203,8 @@ body p {
 .nav-bottom .left a.leader:hover {
     color: #ff8800;
 }
+
+/* Navbar Categories */
 
 .nav-categories {
     width: 100%;
@@ -290,24 +310,31 @@ body p {
 /* ------------------ Ads Carusel ----------------- */
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
-.ads-carusel {
+.rec-carusel {
     height: 615px;
 }
 
-.ads__slider {
+.rec__slider {
     margin-top: -15px;
     width: 100%;
     height: 615px;
     flex-direction: column;
 }
 
-.ads__slider-counter {
+.rec__slider-counter {
     display: flex;
     font-size: 1.3rem;
     align-items: center;
+    position: absolute;
+    z-index: 10;
+    margin-top: -62px;
+    margin-left: 700px;
+    width: 167px;
+    background-color: #fff;
+    height: 64px;
 }
 
-.ads__slider-wrapper {
+.rec__slider-wrapper {
     width: 867px;
     margin-top: 15px;
     display: flex;
@@ -315,71 +342,65 @@ body p {
     position: relative;
 }
 
-.ads__slider-prev {
+.rec__slider-prev {
     margin-right: 10px;
     cursor: pointer;
 }
 
-.ads__slider-next {
+.rec__slider-next {
     margin-left: 10px;
     cursor: pointer;
 }
 
-.ads__slide {
+.rec__slide {
     position: relative;
-    width: 100%;
     height: 100%;
-    transition: 300ms ease all;
 }
 
-.ads__slide {
-    right: 0;
-}
-
-.ads__slide img {
+.rec__slide img {
     width: 867px;
 }
 
-.ads__slide .title {
+.rec__slide .title {
     font-size: 1.4rem;
     color: #000;
     margin-bottom: 3px;
 }
 
-.adscontent__descr {
+.reccontent__descr {
     display: flex;
     justify-content: space-between;
 }
 
-.ads__slide .subtitle {
+.rec__slide .subtitle {
     font-size: 1.4rem;
     color: #888888;
 }
 
-.ads {
+.rec {
     width: 100%;
     padding: 30px 0;
 }
 
-.ads .contain {
+.rec .contain {
     display: flex;
     justify-content: space-between;
 }
 
-.ads .other-ads {
+.rec .other-rec {
     margin-bottom: 20px;
 }
 
-.ads .other img {
+.rec .other img {
     width: 295px;
 }
 
-.ads .other h3 {
+.rec .other h3 {
     font-size: 1.3rem;
     margin-bottom: 3px;
 }
 
-.ads .other .subtitle {
+.rec .other .subtitle {
     color: #888888;
 }
 
@@ -406,6 +427,7 @@ body p {
 }
 
 .ex__slider-wrapper {
+    position: relative;
     width: 100%;
     overflow: hidden;
 }
@@ -461,6 +483,24 @@ body p {
     padding: 14px 0;
     cursor: pointer;
     z-index: 10;
+}
+
+.fav {
+    display: inline-block;
+    font-size: 1.5rem;
+    position: absolute;
+    color: white;
+    margin-top: -315px;
+    margin-left: 145px;
+}
+
+.fav:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.favChosen {
+    color: red;
 }
 
 #active {
@@ -521,46 +561,57 @@ body p {
     left: 120px;
 }
 
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
-/* ------------------ Icons Carusel, bttm ----------------- */
-/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* ------------------ Clothes Types ------------------ */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 
-.popbttm {
-    padding: 40px 0;
-}
 
-.icons img {
+.clothes__types img {
     margin: 40px 0;
     width: 100%;
 }
 
-.iconsbttm img {
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* ------------------ Recommend Clothes Types ------------------ */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+
+.rec-clothes__types img {
     width: 100%;
     margin: 40px 0;
 }
 
-.iconsbttm img:hover {
+.rec-clothes__types img:hover {
     opacity: 0.8;
 }
 
-.popbttm .carousel-container {
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+/* ------------------ Recommend Clothes Types ------------------ */
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+.rec-applacation {
+    padding: 40px 0;
+}
+
+.rec__app-container {
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
-.popbttm .carousel {
+.rec__app-carousel {
     display: flex;
     width: 200%;
     transition: transform 0.5s ease-in-out;
     overflow: hidden;
 }
 
-.popbttm .carousel-inner {
+.rec__app-carousel-inner {
     display: flex;
 }
 
-.popbttm img {
+.rec__app-slide img {
     width: 100%;
     margin-right: 30px;
 }
@@ -587,6 +638,11 @@ footer {
     border-bottom: 1px solid #ccc;
     background: transparent;
     padding-bottom: 10px;
+    color: #ccc;
+}
+
+.input input:focus{
+    outline: 0;
 }
 
 .input button {
@@ -709,45 +765,131 @@ footer {
     border-right: 1px solid #888;
 }
 
-.top ul li a {
+.top ul li span {
     color: #888;
     padding: 2px 10px;
     display: inline-block;
 }
 
-.top ul li a.current {
+.top ul li span.current {
     color: #fff;
 }
 
-.top ul li a:hover {
+.top ul li span:hover {
     color: #fff;
+    cursor: pointer;
 }
 
 /* Bottom */
 
-.bottom {
+.footer__nav {
     padding: 20px 0;
+    display: none;
 }
 
-.bottom p {
+.nav-contain {
+    display: flex;
+}
+
+.footer__nav.current {
+    display: block;
+}
+
+.footer__nav p {
     color: #fff;
 }
 
-.bottom .title {
+.footer__nav-head {
+    width: 225px;
+}
+
+.footer__nav-head p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    padding: 5px 0;
+    transition: all 300ms ease;
+}
+
+.footer__nav-head p.footer__nav-box-titles {
+    color: #888;
+}
+
+.footer__nav-head p:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.working {
+    color: #fff;
+    border-right: 3px solid #fff;
+}
+
+.footer__nav-main.active {
+    display: block;
+}
+
+.footer__nav-main {
+    border-left: 1px solid #fff;
+    padding-left: 20px;
+    display: none;
+}
+
+.footer__contain {
+    display: flex;
+}
+
+.footer__nav-main div {
+    width: 225px;
+}
+
+.footer__nav-main p {
+    color: #fff;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 5px 0;
+    line-height: 16px;
+    transition: all 300ms ease;
+    width: 165px;
+}
+
+.footer__nav-main p:hover {
+    color: #888;
+    cursor: pointer;
+}
+
+.footer__nav .title {
     font-size: 0.8rem;
     margin-bottom: 20px;
     margin-top: 15px;
 }
 
-.bottom .text{
+.footer__nav .text {
     font-size: 0.7rem;
     margin-bottom: 7px;
-    line-height: 16px
+    line-height: 16px;
+    color: #fff;
 }
+
+/* Footer Navbar */
 
 .footer-bottom {
     padding: 20px 6%;
     background: #2c2c2e;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #ccc;
+}
+
+.footer-bottom a {
+    border-bottom: 1px solid #ccc;
+    color: #ccc;
+    transition: all 300ms ease;
+}
+
+.footer-bottom a:hover {
+    border-color: #fff;
+    border: none;
+    color: #fff;
 }
 
 /* ----------------------------------------------------- */

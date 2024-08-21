@@ -1,57 +1,154 @@
-const hoverDivs = Array.from(document.querySelectorAll('[id^=exhover__div-]'));
+const recFirstSlides = document.querySelectorAll(".recFirstSlide"),
+    recFirstNext = document.querySelector(".recFirstNext"),
+    recFirstPrev = document.querySelector(".recFirstPrev"),
+    recFirstTotal = document.querySelector("#recFirstTotal"),
+    recFirstCurrent = document.querySelector("#recFirstCurrent"),
+    recFirstWrapper = document.querySelector(".recFirstWrapper"),
+    recFirstInner = document.querySelector(".recFirstInner"),
+    recFirstWidth = window.getComputedStyle(recFirstWrapper).width;
 
-hoverDivs.forEach((hoverDiv, index) => {
-    hoverDiv.addEventListener('mouseover', function () {
-        const hoverCtrl = document.getElementById(`exhover__ctrl-${index + 1}`);
-        const activeImg = document.getElementById(`exactive${index + 1}`);
-        const divs = [document.getElementById(`exdiv${index + 1}1`), document.getElementById(`exdiv${index + 1}2`), document.getElementById(`exdiv${index + 1}3`)];
-        const imgs = [document.getElementById(`eximg${index + 1}1`), document.getElementById(`eximg${index + 1}2`), document.getElementById(`eximg${index + 1}3`)];
+let firstSlideIndex = 1;
+let firstOffset = 0;
+const firstSlideWidth = +recFirstWidth.slice(0, recFirstWidth.length - 2);
 
-        hoverCtrl.style.display = 'block';
+if (recFirstSlides.length < 10) {
+    recFirstTotal.textContent = `0${recFirstSlides.length}`;
+    recFirstCurrent.textContent = `0${firstSlideIndex}`;
+} else {
+    recFirstTotal.textContent = recFirstSlides.length;
+    recFirstCurrent.textContent = firstSlideIndex;
+}
 
-        divs.forEach((div, imgIndex) => {
-            div.addEventListener('mouseover', function () {
-                activeImg.style.display = 'none';
-                imgs[imgIndex].style.display = 'block';
-            });
-            div.addEventListener('mouseout', function () {
-                activeImg.style.display = 'block';
-                imgs[imgIndex].style.display = 'none';
-            });
-        });
-    });
+recFirstInner.style.width = 100 * recFirstSlides.length + "%";
+recFirstInner.style.display = "flex";
+recFirstInner.style.transition = 'all 1s ease'
+recFirstWrapper.style.overflow = "hidden";
 
-    hoverDiv.addEventListener('mouseout', function () {
-        const hoverCtrl = document.getElementById(`exhover__ctrl-${index + 1}`);
-        hoverCtrl.style.display = 'none';
-    });
+function firstChangerSlideIndex() {
+    if (recFirstSlides.length < 10) {
+        recFirstCurrent.textContent = `0${firstSlideIndex}`;
+    } else {
+        recFirstCurrent.textContent = firstSlideIndex;
+    }
+}
+
+function firstTimerSlide() {
+    if (firstOffset === firstSlideWidth * (recFirstSlides.length - 1)) {
+        firstOffset = 0;
+        firstSlideIndex = 1;
+    } else {
+        firstOffset += firstSlideWidth;
+        firstSlideIndex++;
+    }
+
+    recFirstInner.style.transform = translateX(`-${firstOffset}px`);
+    firstChangerSlideIndex();
+}
+const firstSlideInterval = 6000;
+
+recFirstNext.addEventListener("click", function () {
+    clearInterval(firstTimerSlide);
+    if (firstOffset === firstSlideWidth * (recFirstSlides.length - 1)) {
+        return;
+    } else {
+        firstOffset += firstSlideWidth;
+        firstSlideIndex++;
+    }
+
+    recFirstInner.style.transform = `translateX(-${firstOffset}px)`;
+    firstChangerSlideIndex();
 });
 
-const hoverDivvs = Array.from(document.querySelectorAll('[id^=pophover__div-]'));
+recFirstPrev.addEventListener("click", function () {
+    clearInterval(firstTimerSlide);
+    if (firstOffset === 0) {
+        return;
+    } else {
+        firstOffset -= firstSlideWidth;
+        firstSlideIndex--;
+    }
 
-hoverDivvs.forEach((hoverDiv, index) => {
-    hoverDiv.addEventListener('mouseover', function () {
-        const hoverCtrl = document.getElementById(`pophover__ctrl-${index + 1}`);
-        const activeImg = document.getElementById(`popactive${index + 1}`);
-        const divs = [document.getElementById(`popdiv${index + 1}1`), document.getElementById(`popdiv${index + 1}2`), document.getElementById(`popdiv${index + 1}3`)];
-        const imgs = [document.getElementById(`popimg${index + 1}1`), document.getElementById(`popimg${index + 1}2`), document.getElementById(`popimg${index + 1}3`)];
-
-        hoverCtrl.style.display = 'block';
-
-        divs.forEach((div, imgIndex) => {
-            div.addEventListener('mouseover', function () {
-                activeImg.style.display = 'none';
-                imgs[imgIndex].style.display = 'block';
-            });
-            div.addEventListener('mouseout', function () {
-                activeImg.style.display = 'block';
-                imgs[imgIndex].style.display = 'none';
-            });
-        });
-    });
-
-    hoverDiv.addEventListener('mouseout', function () {
-        const hoverCtrl = document.getElementById(`pophover__ctrl-${index + 1}`);
-        hoverCtrl.style.display = 'none';
-    });
+    recFirstInner.style.transform = `translateX(-${firstOffset}px)`;
+    firstChangerSlideIndex();
 });
+
+
+firstChangerSlideIndex();
+
+
+
+const recSecondSlides = document.querySelectorAll(".recSecondSlide"),
+    recSecondNext = document.querySelector(".recSecondNext"),
+    recSecondPrev = document.querySelector(".recSecondPrev"),
+    recSecondTotal = document.querySelector("#recSecondTotal"),
+    recSecondCurrent = document.querySelector("#recSecondCurrent"),
+    recSecondWrapper = document.querySelector(".recSecondWrapper"),
+    recSecondInner = document.querySelector(".recSecondInner"),
+    recSecondWidth = window.getComputedStyle(recSecondWrapper).width;
+
+let secondSlideIndex = 1;
+let secondOffset = 0;
+const secondSlideWidth = +recSecondWidth.slice(0, recSecondWidth.length - 2);
+
+if (recSecondSlides.length < 10) {
+    recSecondTotal.textContent = `0${recSecondSlides.length}`;
+    recSecondCurrent.textContent = `0${secondSlideIndex}`;
+} else {
+    recSecondTotal.textContent = recSecondSlides.length;
+    recSecondCurrent.textContent = secondSlideIndex;
+}
+
+recSecondInner.style.width = 100 * recSecondSlides.length + "%";
+recSecondInner.style.display = "flex";
+recSecondInner.style.transition = 'all 1s ease'
+recSecondWrapper.style.overflow = "hidden";
+
+function secondChangerSlideIndex() {
+    if (recSecondSlides.length < 10) {
+        recSecondCurrent.textContent = `0${secondSlideIndex}`;
+    } else {
+        recSecondCurrent.textContent = secondSlideIndex;
+    }
+}
+
+function secondTimerSlide() {
+    if (secondOffset === secondSlideWidth * (recSecondSlides.length - 1)) {
+        secondOffset = 0;
+        secondSlideIndex = 1;
+    } else {
+        secondOffset += secondSlideWidth;
+        secondSlideIndex++;
+    }
+
+    recSecondInner.style.transform = translateX(`-${secondOffset}px`);
+    secondChangerSlideIndex();
+}
+const secondSlideInterval = 6000;
+
+recSecondNext.addEventListener("click", function () {
+    clearInterval(secondTimerSlide);
+    if (secondOffset === secondSlideWidth * (recSecondSlides.length - 1)) {
+        return;
+    } else {
+        secondOffset += secondSlideWidth;
+        secondSlideIndex++;
+    }
+
+    recSecondInner.style.transform = `translateX(-${secondOffset}px)`;
+    secondChangerSlideIndex();
+});
+
+recSecondPrev.addEventListener("click", function () {
+    clearInterval(secondTimerSlide);
+    if (secondOffset === 0) {
+        return;
+    } else {
+        secondOffset -= secondSlideWidth;
+        secondSlideIndex--;
+    }
+
+    recSecondInner.style.transform = `translateX(-${secondOffset}px)`;
+    secondChangerSlideIndex();
+});
+
+secondChangerSlideIndex();

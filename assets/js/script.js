@@ -1,3 +1,8 @@
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+// ---------------- Navigation Panel Categories Script  ----------------/
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+
+
 function NavbarCategories() {
     const categoryNew = document.getElementById('category-new');
     const categoryGirl = document.getElementById('category-girl');
@@ -120,157 +125,368 @@ function NavbarCategories() {
     })
 }
 NavbarCategories()
+{
+    // function NavbarCategories() {
+    //     const categories = [
+    //         { trigger: 'category-new', target: '.news' },
+    //         { trigger: 'category-girl', target: '.girls' },
+    //         { trigger: 'category-boy', target: '.boys' },
+    //         { trigger: 'category-baby', target: '.babies' },
+    //         { trigger: 'category-brand', target: '.brands' },
+    //         { trigger: 'category-premium', target: '.premium' },
+    //         { trigger: 'category-sport', target: '.sports' },
+    //     ];
 
-// Ads Carusel
+    //     categories.forEach(category => {
+    //         const triggerElement = document.getElementById(category.trigger);
+    //         const targetDiv = document.querySelector(category.target);
 
-const slider1 = document.getElementById('slider1'),
-    slider2 = document.getElementById('slider2'),
-    slider3 = document.getElementById('slider3')
+    //         triggerElement.addEventListener('mouseover', () => {
+    //             targetDiv.classList.remove('hidden');
+    //         });
 
-const next1 = document.getElementById('next1')
-const next2 = document.getElementById('next2')
-const prev2 = document.getElementById('prev2')
-const prev3 = document.getElementById('prev3')
+    //         triggerElement.addEventListener('mouseout', () => {
+    //             targetDiv.classList.add('hidden');
+    //         });
 
-next1.addEventListener('click', function () {
-    slider1.style.right = '867px'
-    slider2.style.right = '867px'
-    slider3.style.right = '867px'
+    //         targetDiv.addEventListener('mouseover', () => {
+    //             targetDiv.classList.remove('hidden');
+    //         });
+
+    //         targetDiv.addEventListener('mouseout', () => {
+    //             targetDiv.classList.add('hidden');
+    //         });
+    //     });
+    // }
+
+    // NavbarCategories();
+}
+const logIn = document.getElementById('logInBtn')
+const profile = document.querySelector('.profile')
+const logOut = document.getElementById('logOutBtn')
+const logo = document.querySelector('.logo')
+
+logIn.addEventListener('click', function () {
+    logIn.style.display = 'none'
+    profile.style.display = 'block'
+    logo.style.margin = '0 40px 0 0' 
+    logOut.addEventListener('click', function() {
+        logIn.style.display = 'block'
+        profile.style.display = 'none'
+        logo.style.margin = '0 80px 0 0'
+    })
 })
 
-next2.addEventListener('click', function () {
-    slider1.style.right = '1734px'
-    slider2.style.right = '1734px'
-    slider3.style.right = '1734px'
-})
 
-prev2.addEventListener('click', function () {
-    slider1.style.right = '0'
-    slider2.style.right = '0'
-    slider3.style.right = '0'
-})
 
-prev3.addEventListener('click', function () {
-    slider1.style.right = '867px'
-    slider2.style.right = '867px'
-    slider3.style.right = '867px'
-})
 
-// const slideField = document.querySelector('.ex__slider-inner');
-// const slides = document.querySelectorAll('.ex__slide');
-// const next = document.querySelector('.ex__slider-next');
-// const prev = document.querySelector('.ex__slider-prev');
-// let index = 0;
-// const visibleSlides = 6;
 
-// next.addEventListener('click', () => {
-//     index++;
-//     if (index > slides.length - visibleSlides) {
-//         index = 0;
-//     }
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+// ---------------- First Exclusive Clothes Script ----------------/
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
 
-//     slideField.style.transform = `translateX(-${index * 200}px)`;
-// });
 
-// prev.addEventListener('click', () => {
-//     index--;
-//     if (index < 0) {
-//         index = slides.length - visibleSlides;
-//     }
-//     slideField.style.transform = `translateX(-${index * 200}px)`;
-// });
+{
+    const exclusiveFirstCarousel = document.getElementById('exclusiveFirstCarousel');
+    const exclusiveFirstNext = document.getElementById('exclusiveFirstNext');
+    const exclusiveFirstPrev = document.getElementById('exclusiveFirstPrev');
 
-const carousel = document.getElementById('carousel');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
+    let exclusiveFirstOffset = 0;
+    const exclusiveFirstSlideWidth = 202;
+    const exclusiveFirstTotalSlides = 12;
+    const exclusiveFirstVisibleSlides = Math.floor(1400 / exclusiveFirstSlideWidth); // Ko'rinadigan slaydlar soni
+    const exclusiveFirstMaxOffset = exclusiveFirstSlideWidth * (exclusiveFirstTotalSlides - exclusiveFirstVisibleSlides); // Maksimal siljish
 
-let offset = 0;
-const slideWidth = 200; // Slide eni + margin
-const totalSlides = 12; // Slaydlar soni
-const visibleSlides = Math.floor(1200 / slideWidth); // Ko'rinadigan slaydlar soni
-const maxOffset = slideWidth * (totalSlides - visibleSlides); // Maksimal siljish
+    exclusiveFirstNext.addEventListener('click', () => {
+        if (exclusiveFirstOffset < exclusiveFirstMaxOffset) {
+            exclusiveFirstOffset += exclusiveFirstSlideWidth;
+            exclusiveFirstCarousel.style.transform = `translateX(-${exclusiveFirstOffset}px)`;
+        }
+    });
 
-nextBtn.addEventListener('click', () => {
-    if (offset < maxOffset) {
-        offset += slideWidth;
-        carousel.style.transform = `translateX(-${offset}px)`;
-    }
-});
+    exclusiveFirstPrev.addEventListener('click', () => {
+        if (exclusiveFirstOffset > 0) {
+            exclusiveFirstOffset -= exclusiveFirstSlideWidth;
+            exclusiveFirstCarousel.style.transform = `translateX(-${exclusiveFirstOffset}px)`;
+        }
+    });
+}
+{
+    const hoverDivs = Array.from(document.querySelectorAll('[id^=exhover__div-]'));
 
-prevBtn.addEventListener('click', () => {
-    if (offset > 0) {
-        offset -= slideWidth;
-        carousel.style.transform = `translateX(-${offset}px)`;
-    }
-});
+    hoverDivs.forEach((hoverDiv, index) => {
+        hoverDiv.addEventListener('mouseover', function () {
+            const hoverCtrl = document.getElementById(`exhover__ctrl-${index + 1}`);
+            const activeImg = document.getElementById(`exactive${index + 1}`);
+            const divs = [document.getElementById(`exdiv${index + 1}1`), document.getElementById(`exdiv${index + 1}2`), document.getElementById(`exdiv${index + 1}3`)];
+            const imgs = [document.getElementById(`eximg${index + 1}1`), document.getElementById(`eximg${index + 1}2`), document.getElementById(`eximg${index + 1}3`)];
 
-const carousel1 = document.getElementById('carousel1');
-const nextBtn1 = document.getElementById('next1Btn');
-const prevBtn1 = document.getElementById('prev1Btn');
+            hoverCtrl.style.display = 'block';
 
-let offset1 = 0;
-const slideWidth1 = 200; // Slide eni + margin
-const totalSlides1 = 12; // Slaydlar soni
-const visibleSlides1 = Math.floor(1200 / slideWidth1); // Ko'rinadigan slaydlar soni
-const maxOffset1 = slideWidth1 * (totalSlides1 - visibleSlides1); // Maksimal siljish
+            divs.forEach((div, imgIndex) => {
+                div.addEventListener('mouseover', function () {
+                    activeImg.style.display = 'none';
+                    imgs[imgIndex].style.display = 'block';
+                });
+                div.addEventListener('mouseout', function () {
+                    activeImg.style.display = 'block';
+                    imgs[imgIndex].style.display = 'none';
+                });
+            });
+        });
 
-nextBtn1.addEventListener('click', () => {
-    if (offset1 < maxOffset1) {
-        offset1 += slideWidth1;
-        carousel1.style.transform = `translateX(-${offset1}px)`;
-    }
-});
-
-prevBtn1.addEventListener('click', () => {
-    if (offset1 > 0) {
-        offset1 -= slideWidth1;
-        carousel1.style.transform = `translateX(-${offset1}px)`;
-    }
-});
-
-const slider21 = document.getElementById('slider21'),
-    slider22 = document.getElementById('slider22'),
-    slider23 = document.getElementById('slider23')
-
-const next21 = document.getElementById('next21')
-const next22 = document.getElementById('next22')
-const prev22 = document.getElementById('prev22')
-const prev23 = document.getElementById('prev23')
-
-next21.addEventListener('click', function () {
-    slider21.style.right = '867px'
-    slider22.style.right = '867px'
-    slider23.style.right = '867px'
-})
-
-next22.addEventListener('click', function () {
-    slider21.style.right = '1734px'
-    slider22.style.right = '1734px'
-    slider23.style.right = '1734px'
-})
-
-prev22.addEventListener('click', function () {
-    slider21.style.right = '0'
-    slider22.style.right = '0'
-    slider23.style.right = '0'
-})
-
-prev23.addEventListener('click', function () {
-    slider21.style.right = '867px'
-    slider22.style.right = '867px'
-    slider23.style.right = '867px'
-})
-
-let currentIndex = 0;
-const slidess = document.querySelectorAll('.slidee');
-const totalSlidess = slidess.length;
-
-const carousell = document.getElementById('carouseel');
-
-function showNextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlidess;
-    const offsett = -currentIndex * 50;
-    carousell.style.transform = `translateX(${offsett}%)`;
+        hoverDiv.addEventListener('mouseout', function () {
+            const hoverCtrl = document.getElementById(`exhover__ctrl-${index + 1}`);
+            hoverCtrl.style.display = 'none';
+        });
+    });
 }
 
-setInterval(showNextSlide, 3000);
+// Both Exclusive Clothes Script
+{
+    const favorites = [];
+
+    for (let i = 1; i <= 24; i++) {
+        favorites.push(document.getElementById(`fav${i}`));
+    }
+
+    favorites.forEach(favorite => {
+        favorite.addEventListener('click', function () {
+            if (favorite.classList.contains('fav')) {
+                favorite.classList.toggle('favChosen');
+            }
+        });
+    });
+}
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+// ---------------- Second Exclusive Script ----------------/
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+
+
+{
+    const exclusiveSecondCarousel = document.getElementById('exclusiveSecondCarousel');
+    const exclusiveSecondNext = document.getElementById('exclusiveSecondNext');
+    const exclusiveSecondPrev = document.getElementById('exclusiveSecondPrev');
+
+    let exclusiveSecondOffset = 0;
+    const exclusiveSecondSlideWidth = 202;
+    const exclusiveSecondTotalSlides = 12;
+    const exclusiveSecondtVisibleSlides = Math.floor(1400 / exclusiveSecondSlideWidth);
+    const exclusiveSecondMaxOffset = exclusiveSecondSlideWidth * (exclusiveSecondTotalSlides - exclusiveSecondtVisibleSlides);
+
+    exclusiveSecondNext.addEventListener('click', () => {
+        if (exclusiveSecondOffset < exclusiveSecondMaxOffset) {
+            exclusiveSecondOffset += exclusiveSecondSlideWidth;
+            exclusiveSecondCarousel.style.transform = `translateX(-${exclusiveSecondOffset}px)`;
+        }
+    });
+
+    exclusiveSecondPrev.addEventListener('click', () => {
+        if (exclusiveSecondOffset > 0) {
+            exclusiveSecondOffset -= exclusiveSecondSlideWidth;
+            exclusiveSecondCarousel.style.transform = `translateX(-${exclusiveSecondOffset}px)`;
+        }
+    });
+}
+{
+    const hoverDivvs = Array.from(document.querySelectorAll('[id^=pophover__div-]'));
+
+    hoverDivvs.forEach((hoverDiv, index) => {
+        hoverDiv.addEventListener('mouseover', function () {
+            const hoverCtrl = document.getElementById(`pophover__ctrl-${index + 1}`);
+            const activeImg = document.getElementById(`popactive${index + 1}`);
+            const divs = [document.getElementById(`popdiv${index + 1}1`), document.getElementById(`popdiv${index + 1}2`), document.getElementById(`popdiv${index + 1}3`)];
+            const imgs = [document.getElementById(`popimg${index + 1}1`), document.getElementById(`popimg${index + 1}2`), document.getElementById(`popimg${index + 1}3`)];
+
+            hoverCtrl.style.display = 'block';
+
+            divs.forEach((div, imgIndex) => {
+                div.addEventListener('mouseover', function () {
+                    activeImg.style.display = 'none';
+                    imgs[imgIndex].style.display = 'block';
+                });
+                div.addEventListener('mouseout', function () {
+                    activeImg.style.display = 'block';
+                    imgs[imgIndex].style.display = 'none';
+                });
+            });
+        });
+
+        hoverDiv.addEventListener('mouseout', function () {
+            const hoverCtrl = document.getElementById(`pophover__ctrl-${index + 1}`);
+            hoverCtrl.style.display = 'none';
+        });
+    });
+}
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+// ---------------- Application Script ----------------/
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+
+
+{
+    let currentIndex = 0;
+    const slidess = document.querySelectorAll('.rec__app-slide');
+    const totalSlidess = slidess.length;
+
+    const carousell = document.getElementById('rec__app-carousel');
+
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlidess;
+        const offsett = -currentIndex * 50;
+        carousell.style.transform = `translateX(${offsett}%)`;
+    }
+
+    setInterval(showNextSlide, 3000);
+}
+
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+// ---------------- Footer Navigation Panel Script ----------------/
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
+
+{
+    {
+        const p1Elements = document.querySelectorAll('.q')
+        const div1Elements = document.querySelectorAll('.a1');
+
+        p1Elements[0].classList.add('working');
+        div1Elements[0].classList.add('active');
+
+        p1Elements.forEach(p => {
+            p.addEventListener('click', function () {
+                document.querySelector('.q.working')?.classList.remove('working');
+                document.querySelector('.a1.active')?.classList.remove('active');
+
+                p.classList.add('working');
+
+                const index = p.getAttribute('data-index');
+                div1Elements[index].classList.add('active');
+            });
+        });
+    }
+
+    {
+        const p2Elements = document.querySelectorAll('.n')
+        const div2Elements = document.querySelectorAll('.a2');
+
+        p2Elements[0].classList.add('working');
+        div2Elements[0].classList.add('active');
+
+        p2Elements.forEach(p => {
+            p.addEventListener('click', function () {
+                document.querySelector('.n.working')?.classList.remove('working');
+                document.querySelector('.a2.active')?.classList.remove('active');
+
+                p.classList.add('working');
+
+                const n = p.getAttribute('data-n');
+                div2Elements[n].classList.add('active');
+            });
+        });
+    }
+
+    {
+        const p3Elements = document.querySelectorAll('.d')
+        const div3Elements = document.querySelectorAll('.a3');
+
+        p3Elements[0].classList.add('working');
+        div3Elements[0].classList.add('active');
+
+        p3Elements.forEach(p => {
+            p.addEventListener('click', function () {
+                document.querySelector('.d.working')?.classList.remove('working');
+                document.querySelector('.a3.active')?.classList.remove('active');
+
+                p.classList.add('working');
+
+                const d = p.getAttribute('data-d');
+                div3Elements[d].classList.add('active');
+            });
+        });
+    }
+
+    {
+        const p4Elements = document.querySelectorAll('.e')
+        const div4Elements = document.querySelectorAll('.a4');
+
+        p4Elements[0].classList.add('working');
+        div4Elements[0].classList.add('active');
+
+        p4Elements.forEach(p => {
+            p.addEventListener('click', function () {
+
+                document.querySelector('.e.working')?.classList.remove('working');
+                document.querySelector('.a4.active')?.classList.remove('active');
+
+                p.classList.add('working');
+
+                const e = p.getAttribute('data-e');
+                div4Elements[e].classList.add('active');
+            });
+        });
+    }
+
+    {
+        const p5Elements = document.querySelectorAll('.x')
+        const div5Elements = document.querySelectorAll('.a5');
+
+        p5Elements[0].classList.add('working');
+        div5Elements[0].classList.add('active');
+
+        p5Elements.forEach(p => {
+            p.addEventListener('click', function () {
+                document.querySelector('.x.working')?.classList.remove('working');
+                document.querySelector('.a5.active')?.classList.remove('active');
+
+                p.classList.add('working');
+
+                const x = p.getAttribute('data-x');
+                div5Elements[x].classList.add('active');
+            });
+        });
+    }
+
+    {
+        const p6Elements = document.querySelectorAll('.c')
+        const div6Elements = document.querySelectorAll('.a6');
+
+        p6Elements[0].classList.add('working');
+        div6Elements[0].classList.add('active');
+
+        p6Elements.forEach(p => {
+            p.addEventListener('click', function () {
+                document.querySelector('.c.working')?.classList.remove('working');
+                document.querySelector('.a6.active')?.classList.remove('active');
+
+                p.classList.add('working');
+
+                const c = p.getAttribute('data-c');
+                div6Elements[c].classList.add('active');
+            });
+        });
+    }
+
+    {
+        const liElements = document.querySelectorAll('.list')
+        const liDivElements = document.querySelectorAll('.footer__nav');
+
+        liElements[6].classList.add('current');
+        liDivElements[6].classList.add('current');
+
+        liElements.forEach(span => {
+            span.addEventListener('click', function () {
+                document.querySelector('.list.current')?.classList.remove('current');
+                document.querySelector('.footer__nav.current')?.classList.remove('current');
+
+                span.classList.add('current');
+
+                const i = span.getAttribute('data-i');
+                liDivElements[i].classList.add('current');
+            });
+        });
+    }
+}
