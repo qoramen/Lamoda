@@ -44,10 +44,9 @@ function firstTimerSlide() {
     recFirstInner.style.transform = translateX(`-${firstOffset}px`);
     firstChangerSlideIndex();
 }
-const firstSlideInterval = 6000;
+let firstSlideInterval = setInterval(firstTimerSlide, 3000);
 
 recFirstNext.addEventListener("click", function () {
-    clearInterval(firstTimerSlide);
     if (firstOffset === firstSlideWidth * (recFirstSlides.length - 1)) {
         return;
     } else {
@@ -57,10 +56,10 @@ recFirstNext.addEventListener("click", function () {
 
     recFirstInner.style.transform = `translateX(-${firstOffset}px)`;
     firstChangerSlideIndex();
+    firstSlideInterval = setInterval(firstTimerSlide, 3000);
 });
 
 recFirstPrev.addEventListener("click", function () {
-    clearInterval(firstTimerSlide);
     if (firstOffset === 0) {
         return;
     } else {
