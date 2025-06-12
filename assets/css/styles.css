@@ -326,7 +326,7 @@ body p {
     font-size: 1.3rem;
     align-items: center;
     position: absolute;
-    z-index: 10;
+    z-index: 5;
     margin-top: -62px;
     margin-left: 700px;
     width: 167px;

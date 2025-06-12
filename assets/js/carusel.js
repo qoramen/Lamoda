@@ -44,7 +44,6 @@ function firstTimerSlide() {
     recFirstInner.style.transform = translateX(`-${firstOffset}px`);
     firstChangerSlideIndex();
 }
-let firstSlideInterval = setInterval(firstTimerSlide, 3000);
 
 recFirstNext.addEventListener("click", function () {
     if (firstOffset === firstSlideWidth * (recFirstSlides.length - 1)) {
@@ -56,7 +55,6 @@ recFirstNext.addEventListener("click", function () {
 
     recFirstInner.style.transform = `translateX(-${firstOffset}px)`;
     firstChangerSlideIndex();
-    firstSlideInterval = setInterval(firstTimerSlide, 3000);
 });
 
 recFirstPrev.addEventListener("click", function () {

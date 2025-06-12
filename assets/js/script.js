@@ -193,8 +193,8 @@ const exclusiveFirstPrev = document.getElementById('exclusiveFirstPrev');
 let exclusiveFirstOffset = 0;
 const exclusiveFirstSlideWidth = 202;
 const exclusiveFirstTotalSlides = 12;
-const exclusiveFirstVisibleSlides = Math.floor(1400 / exclusiveFirstSlideWidth); // Ko'rinadigan slaydlar soni
-const exclusiveFirstMaxOffset = exclusiveFirstSlideWidth * (exclusiveFirstTotalSlides - exclusiveFirstVisibleSlides); // Maksimal siljish
+const exclusiveFirstVisibleSlides = Math.floor(1400 / exclusiveFirstSlideWidth);
+const exclusiveFirstMaxOffset = exclusiveFirstSlideWidth * (exclusiveFirstTotalSlides - exclusiveFirstVisibleSlides);
 
 exclusiveFirstNext.addEventListener('click', () => {
     if (exclusiveFirstOffset < exclusiveFirstMaxOffset) {
@@ -246,7 +246,7 @@ hoverDivs.forEach((hoverDiv, index) => {
 const favorites = [];
 
 for (let i = 1; i <= 24; i++) {
-    favorites.push(document.getElementById(`fav${i}`));
+    favorites.push(document.getElementById(`fav${i}`));     
 }
 
 favorites.forEach(favorite => {
@@ -256,7 +256,6 @@ favorites.forEach(favorite => {
         }
     });
 });
-
 
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%/
@@ -336,6 +335,7 @@ function showNextSlide() {
     const offsett = -currentIndex * 50;
     carousell.style.transform = `translateX(${offsett}%)`;
 }
+
 
 setInterval(showNextSlide, 3000);
 
